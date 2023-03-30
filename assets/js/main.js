@@ -6,6 +6,7 @@ var gameState = {
 }
 
 let gameArea = document.querySelector('.game-area');
+let timeDelay = "500"
 
 let choices = ['rock', 'paper', 'scissors'];
 let rules = {
@@ -38,14 +39,12 @@ function checkResults() {
     }
     if (rules[playerChoice][cpuChoice]) {
         gameState.msg = 'You Win!'
-        showResults();
         incrementScore();
-        updateScore();
-        return
+    } else {
+        gameState.msg = 'You Lose!'
+        decrementScore();
     }
-    gameState.msg = 'You Lose!'
     showResults()
-    decrementScore();
     updateScore();
 
 }
@@ -70,9 +69,8 @@ function decrementScore() {
 
 function updateScore() {
     setTimeout(() => {
-
         document.getElementById('score').innerHTML = gameState.score
-    }, "3000");
+    }, timeDelay);
 }
 
 function showControls() {
@@ -120,8 +118,8 @@ function showResults() {
         setTimeout(() => {
             gameArea.classList.add('stage2')
             document.getElementsByClassName('hide')[0].classList.remove('hide')
-        }, "1000");
-    }, "2000");
+        }, timeDelay);
+    }, timeDelay);
     gameArea.innerHTML = html;
     document.getElementById('play-again-btn').addEventListener("click", (event) => {
         showControls();
@@ -136,5 +134,4 @@ function resetGameArea() {
 }
 
 
-resetGameArea()
 showControls();
