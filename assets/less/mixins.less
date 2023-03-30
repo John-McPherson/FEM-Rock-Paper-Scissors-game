@@ -1,0 +1,42 @@
+// gradients 
+@bgGradient: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+@rockGradient: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+@scissorsGradient: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+@paperGradient: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+
+
+
+// colors
+
+@headerOutline: hsl(217, 16%, 45%);
+@darkText: hsl(229, 25%, 31%);
+@scoreText: hsl(229, 64%, 46%);
+
+.circle {
+    max-width: 204px;
+    width: 100%;
+    max-height: 204px;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px -10px 0 rgba(0, 0, 0, 0.35) inset;
+    position: relative;
+
+    &:before {
+        box-shadow: 0px 10px 0 rgba(0, 0, 0, 0.1) inset;
+        content: '';
+        height: 148px;
+        width: 148px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-size: auto 80px;
+        background-position: center;
+    }
+}
